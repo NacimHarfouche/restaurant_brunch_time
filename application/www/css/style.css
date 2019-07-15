@@ -1,0 +1,144 @@
+/* font */
+
+/* GLOBAL */
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #f3f0e8;
+}
+a {
+   text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+main {
+    margin: auto;
+    width: 90%;
+}
+
+
+
+/* header */
+header {
+    background-color: #B38867;
+}
+header h1 {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+header h1 a {
+    color: black;
+}
+header img {
+    color: red;
+}
+header div {
+    display: flex;
+    justify-content: space-between;
+}
+header div a {
+    background-color: #CDCDC0;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #B38867;
+    width: 100%;
+    text-align: center;
+}
+#visa:hover {
+    color: #2a3793;
+}
+#visa:hover span {
+    color: #f69410;
+}
+#mastercard:hover {
+    color: #eb001b;
+}
+#mastercard:hover span {
+    color: #f79e1b;
+}
+#paypal:hover {
+    color: #023086;
+}
+#paypal:hover span {
+    color: #029de0;
+}
+small a {
+    color: white;
+}
+
+
+/* Home */
+table {
+    margin: auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+td {
+    padding: 10px;
+}
+.meal-list caption {
+    font-size: 1.5rem;
+    color: #439668;
+}
+.menu td img {
+    width: 200px;
+}
+.firstTD {
+    width: 50%;
+}
+.secondTD {
+    width: 45%;
+}
+.thirdTD {
+    width: 5%;
+}
+tr:hover {
+    background-color: #cdcdc0;
+}
+
+
+/* Sign Up */
+fieldset {
+    border-radius: 5px;
+}
+fieldset table {
+    margin:0;
+}
+
+
+/* order */
+form table ul {
+    display: flex;
+    flex-direction: row;
+}
+#displayProduct li {
+    margin: 5px;
+}
+
+/* recap */
+#infoUser {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+.imgCommande {
+    width: 200px;
+}

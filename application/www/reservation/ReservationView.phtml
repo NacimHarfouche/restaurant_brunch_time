@@ -1,0 +1,26 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+
+<!-- Liste des aliments -->
+<section>
+    <h2><i class="fas fa-utensils"></i> Réservation d'une table</h2>
+    <form action="<?= $requestUrl ?>/reservation" method="POST">
+        <fieldset>
+            <legend><i class="fas fa-lock"></i> Informations</legend>
+            <table>
+                <tr>
+                    <td><label for="bookingDate">Date de réservation</label></td>
+                    <td><input type="date" id="bookingDate" name="bookingDate" /> à <input type="time" name="bookingTime" min="9:00" max="21:30"></td>
+                </tr>
+                <tr>
+                    <td><label for="numberOfSeats">Nombre de couverts :</label></td>
+                    <td><input type="number" id="numberOfSeats" name="numberOfSeats" /></td>
+                </tr>
+            </table>
+        </fieldset>
+        <button type="submit">Réserver</button>
+        <button type="reset">Annuler</button>
+    </form>
+</section>

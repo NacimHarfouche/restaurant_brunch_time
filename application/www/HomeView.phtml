@@ -1,0 +1,33 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+
+<!-- Liste des aliments -->
+<table class="generic-table meal-list">
+    <caption>Carte du restaurant</caption>
+    <tbody>
+
+        <?php foreach ($meals as $meal):?>
+            <tr class="menu">
+                <td class="firstTD">
+                    <img src="<?= $wwwUrl ?>/images/meals/<?= $meal["Photo"] ?>" alt="<?= $meal["Name"] ?>" />
+                </td>
+                <td class="secondTD">
+                    <h4><?= $meal["Name"] ?></h4>
+                    <p><?= $meal["Description"] ?></p>
+                </td>
+                <td class="thirdTD">
+                    <p><strong><?= number_format($meal["SalePrice"],2) ?> €</strong></p>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </section>
+        <!-- <form action="<?= $requestUrl ?>/" method="post" enctype="multipart/form-data">
+            <input type="file" name="fichier">
+            <input type="submit">
+        </form> -->
+
+    </tbody>
+</table>
+

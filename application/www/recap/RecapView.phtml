@@ -1,0 +1,57 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+
+<!-- Liste des aliments -->
+<section>
+    <h2><i class="fas fa-check"></i> Payer la commande</h2>
+    <div id="infoUser">
+        <p><?= $_SESSION["name"] ?> <?= $_SESSION["lastName"] ?></p>
+        <p><?= $user["Adresse"] ?></p>
+        <p><?= $user["City"] ?> <?= $user["ZipCode"] ?></p>
+        <?php if ($user["Country"] != null): ?>
+            <p><?= $user["Country"] ?></p>
+        <?php endif; ?>
+    </div>
+    <form method="post" action="<?= $requestUrl ?>/validorder?idOrder=<?= $order["0"]["Order_Id"] ?>">
+        <fieldset>
+            <legend>Récapitulatif de la commande</legend>
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td>Quantité</td>
+                    <td>Prix Unitaire</td>
+                    <td>Prix total</td>
+                </tr>
+                <?php $totalHT = 0; ?>
+                <?php foreach ($order as $meal): ?>
+                <tr>
+                    <td><img src="<?=  $wwwUrl . "/images/meals/" . $meal["Photo"] ?>" alt="meal" class="imgCommande"> <p><?= $meal["Name"] ?></p></td>
+                    <td><?= $meal["QuantityOrdered"] ?></td>
+                    <td><?= $meal["SalePrice"] ?> €</td>
+                    <td><?= $totalEach =floatval($meal["SalePrice"] * $meal["QuantityOrdered"]) ?> €</td>
+                    <?php $totalHT += $totalEach ?>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td>Total HT</td>
+                    <td><?= $totalHT; ?> €</td>
+                </tr>
+                <tr>
+                    <td>TVA (20%)</td>
+                    <td><?= $meal["TaxAmount"]; ?> €</td>
+                </tr>
+                <tr>
+                    <td>Total TTC</td>
+                    <td><?= $meal["TotalAmount"]; ?> €</td>
+                </tr>
+            </table>
+        </fieldset>
+        <p>Commandé le <?= $meal["CreationTimestamp"]; ?></p>
+        <hr>
+        <p>Merci de bien vouloir procéder au paiement de la commande</p>
+        <button type="submit" id="validOrder">Payer</button>
+        <button type="reset">Annuler</button>
+    </form>
+</section>

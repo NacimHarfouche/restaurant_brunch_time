@@ -1,0 +1,85 @@
+<?php if ($_SERVER["PHP_SELF"] != "/restaurant/index.php/recap"): ?>
+    <?php session_start(); ?>
+<?php endif; ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Brunch Time</title>
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+    <!-- Feuilles de styles de l'application -->
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
+
+    <!-- feuille de style qui fixe le footer en bas de page -->
+    <?php if ($_SERVER["PHP_SELF"] == "/restaurant/index.php/reservation" OR $_SERVER["PHP_SELF"] ==  "/restaurant/index.php/order"  OR $_SERVER["PHP_SELF"] ==  "/restaurant/index.php/validorder"): ?>
+        <!-- <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/fixFooter.css"/> -->
+    <?php endif; ?>
+    
+    <!-- Librairie jQuery -->
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+
+    <!-- JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+</head>
+<body>
+<!-- En-tête commune -->
+<header>
+    <h1>
+        <a href="<?= $requestUrl ?>">
+            <img src="<?= $wwwUrl ?>/images/logo.svg" height="63" width="57" alt="tarte"> Brunch Time !
+        </a>
+    </h1>
+    <?php if (count($_SESSION) == 0): ?>
+        <div>
+            <a href="<?= $requestUrl ?>/signup" >Sign Up</a>
+            <a href="<?= $requestUrl ?>/login">Login</a>
+        </div>
+    <?php else: ?>
+        <div>
+            <a href="<?= $requestUrl ?>/reservation">Réserver</a>
+            <a href="<?= $requestUrl ?>/order">Commander</a>
+        </div>
+        <div>
+            <p>Bonjour <?= $_SESSION["name"] ?> <?= $_SESSION["lastName"] ?> !</p>
+            <a href="<?= $requestUrl ?>/logout">Logout</a>
+        </div>
+    <?php endif; ?>
+</header>
+
+<!-- Interface utilisateur -->
+<nav class="user-interface">
+    <ul class="link-list">
+        <!-- Code HTML/PHP à écrire -->
+    </ul>
+</nav>
+
+<main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template'] ?>
+</main>
+
+<!-- Pied de page commun -->
+<footer>
+    <ul class="link-list">
+        <li id="visa"><i class="fab fa-cc-visa"></i> <span>VISA</span></li>
+        <li id="mastercard"><i class="fab fa-cc-mastercard"></i> <span>MasterCard</span></li>
+        <li id="paypal"><i class="fab fa-cc-paypal"></i> <span>PayPal</span></li>
+    </ul>
+    <small>Réalisé avec <i class="fa fa-heart"></i>&nbsp; par <a href="https://github.com/NacimHarfouche" id="test">Nacim Harfouche</a></small>
+</footer>
+
+<!-- Code principal JavaScript de l'application -->
+<script src="<?= $wwwUrl ?>/js/main.js"></script>
+
+</body>
+</html>

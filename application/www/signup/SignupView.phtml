@@ -1,0 +1,64 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+
+<!-- Liste des aliments -->
+<section>
+    <h2><i class="fas fa-user"></i> Création d'un compte client</h2>
+    <form action="<?= $requestUrl ?>/signup" method="POST">
+        <fieldset>
+            <legend><i class="fas fa-book"></i> Identité et coordonnées</legend>
+            <table>
+                <tr>
+                    <td><label for="lastName">Nom :</label></td>
+                    <td><input type="text" id="lastName" name="lastName"/></td>
+                </tr>
+                <tr>
+                    <td><label for="firstName">Prénom :</label></td>
+                    <td><input type="text" id="firstName" name="firstName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="birthDate">Date de naissance : </label></td>
+                    <td><input type="date" id="birthDate" name="birthDate" /></td>
+                </tr>
+                <tr>
+                    <td><label for="adresse">Adresse :</label></td>
+                    <td><input type="text" id="adresse" name="adresse" /></td>
+                </tr>
+                <tr>
+                    <td><label for="city">Ville :</label></td>
+                    <td><input type="text" id="city" name="city" /></td>
+                </tr>
+                <tr>
+                    <td><label for="zipCode">Code Postal :</label></td>
+                    <td><input type="number" id="zipCode" name="zipCode" min="0" max="99999" maxlength="5"/></td>
+                </tr>
+                <tr>
+                    <td><label for="country">Pays :</label></td>
+                    <td><input type="text" id="country" name="country" /></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Téléphone</label></td>
+                    <td><input type="tel" id="phone" name="phone" maxlength="10" /></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend><i class="fas fa-lock"></i> Information d'authentification</legend>
+            <table>
+                <tr>
+                    <td><label for="email">E-mail :</label></td>
+                    <td><input type="email" id="email" name="email" /></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Mot de passe :</label></td>
+                    <td><input type="password" id="password" name="password" /></td>
+                </tr>
+            </table>
+        </fieldset>
+        <button type="submit">Crée le Compte</button>
+        <button type="reset">Annuler</button>
+    </form>
+</section>
